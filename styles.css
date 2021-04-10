@@ -9,21 +9,35 @@
 
 div.nav-bar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 1rem 6rem;
+    padding: 1rem;
     width: 100vw;
     background: #304353;
 }
 
 div.logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #bcc3c7;
 }
 
 ul.nav-links {
-    display: flex;
+    display: none;
+    flex-direction:column;
+    position: absolute;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    left: 0;
+    top: 0;
     margin: 0;
-    padding: 0;
+    padding: 16px 0;
+}
+
+.nav-links span {
+    display: block;
+    margin-left: auto;
+    margin-right: 32px;
 }
 
 ul li {
@@ -46,7 +60,7 @@ ul li a:hover {
 
 div.hero-section {
     background: #304353;
-    padding: 10rem;
+    padding: 10rem 1rem;
 }
 
 div.hero-content-heading {
@@ -89,7 +103,7 @@ div.hero-content-btn a {
 
 div.hero-background {
     background: #f0f0f0;
-    padding: 10rem;
+    padding: 10rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,15 +111,13 @@ div.hero-background {
 
 div.background {
     background: #fff;
-    box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
-    padding: 15px 40px;
-    width: 550px;
-    height: 220px;
-    position: relative;
+        box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
+    padding: 0 40px 2rem;
 }
 
 div.background h4 {
-    padding: 2rem;
+    
+    padding: 2rem 0;
     color: #555657;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -113,19 +125,17 @@ div.background h4 {
 }
 
 div.background p {
+    max-width: 500px;
     color: #A6A5AA;
-    padding-left: 2rem;
     font-size: 0.8rem;
     letter-spacing: 2px;
 }
 
 div.hero-background-pos {
-    position: absolute;
-    right: 0px;
-    left: 66%;
     background: #fff;
     width: 140px;
     height: 140px;
+    display: none;
     border-radius: 50%;
     box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
 }
@@ -147,7 +157,7 @@ div.snapshot-team p {
     color: #A6A5AA;
     font-size: 1rem;
     letter-spacing: 2px;
-    padding-top: 0.8rem;
+    padding: 0.8rem 1rem;
 }
 
 div.snapshot-box {
@@ -160,7 +170,8 @@ div.snapshot-box {
 
 div.snapshot-box-content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 div.box1 {
@@ -210,7 +221,7 @@ div.box1 h5 {
 
 div.gallery-section {
     background: #fff;
-    padding: 4rem;
+    padding: 4rem 1rem;
 }
 
 div.gallery-content {
@@ -272,15 +283,13 @@ div.footer-content p {
 
 div.footer-input {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     padding-top: 3rem;
 }
 
 input[type="text"] {
-    margin-right: 10px;
     padding: 10px 20px;
-    width: 25%;
+    width: 100%;
     outline: none;
     border: 1px solid #bcc3c7;
     background: transparent;
@@ -290,9 +299,9 @@ input[type="text"] {
 }
 
 input[type="email"] {
-    margin-right: 10px;
+    margin-top: 32px;
     padding: 10px 20px;
-    width: 25%;
+    width: 100%;
     outline: none;
     border: 1px solid #bcc3c7;
     background: transparent;
@@ -313,7 +322,7 @@ div.footer-textarea {
 }
 
 textarea {
-    width: 51%;
+    width: 100%;
     height: 150px;
     padding: 0.5rem;
     outline: none;
@@ -344,4 +353,53 @@ div.footer h6 {
     color: #88949B;
     font-size: 1rem;
     padding-top: 6rem;
+}
+
+@media screen and (min-width: 768px){
+        ul.nav-links {
+        display: flex;
+        flex-direction:row;
+        position: static;
+        width: unset;
+        height: unset;
+        background: none;
+        padding: 0;
+    }
+
+    .nav-links span {
+        display: none;
+    }
+    .hamburger {
+        display: none;
+    }
+
+    div.footer-input {
+        width: 640px;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+
+    input[type="email"] {
+        margin-top: 0;
+        margin-left: 32px;
+    }
+
+    div.footer-textarea {
+        width: 640px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav-bar-bg {
+        background: #304353;
+    }
+    div.nav-bar {
+        max-width: 1440px
+        margin: 0 auto;
+    }
+    div.hero-background-pos {
+        display: block;
+        margin-left: -56px;
+    }
 }
